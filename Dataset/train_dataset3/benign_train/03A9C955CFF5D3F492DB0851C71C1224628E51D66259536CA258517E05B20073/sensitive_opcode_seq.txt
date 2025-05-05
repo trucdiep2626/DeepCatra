@@ -1,0 +1,8 @@
+const/4
+const/4
+iput-boolean
+new-instance
+const/4
+invoke-direct
+
+

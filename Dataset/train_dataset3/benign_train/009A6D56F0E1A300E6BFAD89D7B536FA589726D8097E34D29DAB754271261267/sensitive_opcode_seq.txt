@@ -1,0 +1,11 @@
+new-instance
+iget-object
+invoke-direct
+const-string
+invoke-virtual
+move-result-object
+check-cast
+const/16
+invoke-virtual
+
+

@@ -1,0 +1,12 @@
+const/4
+new-instance
+const-string
+invoke-direct
+invoke-virtual
+move-result-object
+invoke-virtual
+invoke-virtual
+move-result-object
+invoke-virtual
+
+

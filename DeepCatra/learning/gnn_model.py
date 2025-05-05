@@ -66,9 +66,9 @@ class AggrSum(nn.Module):
     def __init__(self):
         super(AggrSum, self).__init__()
 
-
-    def forward(self, H, X_neis,V):
-        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    def forward(self, H, X_neis, V):
+        # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        device = torch.device("mps:0" if torch.backends.mps.is_available() else "cpu")
         mask = torch.stack([X_neis] * V, 0)
         mask = mask.float() - torch.unsqueeze(torch.range(0, V - 1).to(device).float(), 1)
         mask = (mask == 0).float()
@@ -96,8 +96,8 @@ class OriLinearGNN(nn.Module):
         # 实现H的分组求和
         self.Aggr = AggrSum()
     def forward(self, feat_Matrix, X_Node, X_Neis, edge_type_index, dg_list):
-        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
+        # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        device = torch.device("mps:0" if torch.backends.mps.is_available() else "cpu")
         X_Node = X_Node.long()
         X_Node_decrease = torch.sub(X_Node,1)
         X_Neis = X_Neis.long()

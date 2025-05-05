@@ -1,0 +1,11 @@
+iget-object
+invoke-interface
+move-result-object
+invoke-virtual
+
+iget-object
+if-eqz
+iget-object
+invoke-virtual
+
+

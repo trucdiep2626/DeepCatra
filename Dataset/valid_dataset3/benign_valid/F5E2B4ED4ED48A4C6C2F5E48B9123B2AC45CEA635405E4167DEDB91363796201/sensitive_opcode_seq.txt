@@ -1,0 +1,10 @@
+const/4
+const/4
+invoke-super
+invoke-virtual
+const/high16
+invoke-virtual
+new-instance
+invoke-direct
+
+
